@@ -1,0 +1,30 @@
+{% extends "home/base.html" %}
+{% load staticfiles %}
+{% block title %}Título dentro{% endblock %}
+{% block content %}
+ <div class="starter-template">
+ 	<div class="panel panel-info">
+  <!-- Default panel contents -->
+  <div class="panel-heading">Nuestros Servicios</div>
+	  <div class="panel-body">
+	    <table class="table table-bordered">
+	    	<thead>
+	    		<tr>
+	    			<th>Posición</th>
+	    			<th>UID</th>
+	    			<th>Nombre</th>
+	    			<th>Descripción</th>
+	    		</tr>
+	    	</thead>
+	    <tbody>
+	    	<tr>
+	    		<td>0</td>
+	    		<td>1</td>
+	    		<td>Planchado de ropa</td>
+	    		<td>Planchamos toda su ropa a domicilio y la dejamos súper arrugada</td></tr><tr><td>1</td><td>2</td><td>Se cuidan niños</td><td>no los malcriamos pero si los hacemos engordar</td></tr><tr><td>2</td><td>3</td><td>Preparación física</td><td>Te ayudamos a bajar esos kilos de más.</td></tr><tr><td>3</td><td>4</td><td>Confección de juguetes</td><td>Creamos los juguetes que tu imaginación te vende</td></tr><tr><td>4</td><td>5</td><td>Cocinamos horrible</td><td>No comas con nosotros porque si lo haces te vas a deprimir</td></tr><tr><td>5</td><td>6</td><td>Limpiamos tu departamento</td><td>Somos súper flojos con ñandú</td></tr></tbody></table>
+	  </div>
+  </div>
+</div>
+{% endblock %}
+
+
