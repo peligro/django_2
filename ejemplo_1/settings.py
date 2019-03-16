@@ -25,7 +25,7 @@ SECRET_KEY = '-xi4&ejjsw2&-a6--x-1x_(m)nhv1vfb23w=yzhyb4&msh2i67'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['pythonanywhere.com']
+ALLOWED_HOSTS = ['127.0.0.1', '192.168.1.59', 'pythonanywhere.com']
 
 
 # Application definition
@@ -77,15 +77,8 @@ WSGI_APPLICATION = 'ejemplo_1.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django',
-        'USER': 'peligro',
-        'PASSWORD': 'ZeQFHSYtdSUoXRtg:9K3',
-        'HOST': 'localhost',
-        'PORT': '3306',
-        'OPTIONS': {
-          'autocommit': True,
-        },
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
 
