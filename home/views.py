@@ -3,6 +3,7 @@ from django.shortcuts import render
 import django
 from django.conf import settings
 from django.contrib.sites.shortcuts import get_current_site
+from home.models import Productos
 
 
 def home_inicio(request):
@@ -21,7 +22,8 @@ def home_servicios(request):
 
 
 def home_productos(request):
-    return render(request, "home/productos.html",{})
+    productos = Productos.objects.all()
+    return render(request, "home/productos.html",{'productos': productos})
 
 
 def home_contacto(request):
