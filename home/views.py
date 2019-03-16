@@ -3,6 +3,8 @@ from django.shortcuts import render
 import django
 from django.conf import settings
 from django.contrib.sites.shortcuts import get_current_site
+from django.contrib import auth
+from django.http import Http404, HttpResponseRedirect
 from home.models import Productos
 
 
@@ -22,8 +24,12 @@ def home_servicios(request):
 
 
 def home_productos(request):
-    productos = Productos.objects.all()
-    return render(request, "home/productos.html",{'productos': productos})
+    if not request.user.is_authenticated:
+        return HttpResponseRedirect('/usuarios/acceso/')
+    else:
+        productos = Productos.objects.all()
+        return render(request, "home/productos.html",{'productos': productos})
+
 
 
 def home_contacto(request):

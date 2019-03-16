@@ -3,11 +3,11 @@
 {% block title %}Productos{% endblock %}
 {% block content %}
 <div class="starter-template"><h1>Nuestros productos</h1><div class="row">
-	{% for producto in productos %}
+	{% for  producto in productos %}
 	<!--ítem-->
 	<div class="col-sm-6 col-md-4">
 		<div class="thumbnail">
-			<img src="{{producto.url}}" alt="{{producto.titulo}}" />
+			<img src="{{producto.url}}" alt="{{producto.titulo}}" title="{{producto.titulo}}" />
 				<div class="caption">
 						<h3>{{producto.titulo}}</h3>
 						<p>{{producto.epigrafe}}</p>

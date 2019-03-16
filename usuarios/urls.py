@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from django.urls import path
-from usuarios.views import login
+from usuarios.views import acceso, salir
 
 urlpatterns = [
-	#path('', home, name="publicaciones_home"),
-	path('login/',login,name="usuarios_login"),
+	#path('', acceso, name="usuarios_login_"),
+	path('acceso/', acceso, name="usuarios_login"),
+	path('salir/', salir, name="usuarios_salir"),
 ]

@@ -3,10 +3,10 @@
 	<html>
 	<head>
 		<meta charset="utf-8" />
-        <link rel="shortcut icon" href="https://www.cesarcancino.com/public/frontend/img/favicon.ico" />
-	    <meta name="author" content="Web Master César Cancino Zapata | yo@cesarcancino.com" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="shortcut icon" href="https://www.cesarcancino.com/public/frontend/img/favicon.ico" />
+	  <meta name="author" content="Web Master César Cancino Zapata | yo@cesarcancino.com" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
 		<title>Aplicación de ejemplo | {% block title %}{% endblock %}</title>
 		<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet" />
         <link href="{% static 'css/ie10-viewport-bug-workaround.css' %}" rel="stylesheet" />
@@ -38,11 +38,18 @@
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="{% url 'home_inicio' %}" title="Inicio">Inicio</a></li>
-            <li><a href="{% url 'usuarios_login' %}" title="Login">Login</a></li>
+            
+            
             <li><a href="{% url 'home_nosotros' %}" title="Nosotros">Nosotros</a></li>
             <li><a href="{% url 'home_servicios' %}" title="Servicios">Servicios</a></li>
             <li><a href="{% url 'home_productos' %}" title="Productos">Productos</a></li>
             <li><a href="{% url 'home_contacto' %}" title="Contacto">Contacto</a></li>
+            {% if user.is_authenticated %}
+            <li><a href="javascript:void(0);">Hola {{ user.email }}</a></li>
+            <li><a href="{% url 'usuarios_salir' %}" title="Login">Salir</a></li>
+            {% else %}
+            <li><a href="{% url 'usuarios_login' %}" title="Login">Login</a></li>
+            {% endif %}
           </ul>
         </div><!--/.nav-collapse -->
       </div>
