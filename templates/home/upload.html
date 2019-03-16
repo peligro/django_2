@@ -1,0 +1,37 @@
+{% extends "home/base.html" %}
+{% load staticfiles %}
+{% block title %}Upload archivos{% endblock %}
+{% block content %}
+<div class="starter-template">
+	<h1>Upload archivos</h1>
+	{% if messages %}
+    {% for msg in messages %}       
+    
+        <div class="alert alert-{{msg.level_tag}}" role="alert">
+        	<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+        {{msg.message}}
+        </div>
+    
+    {% endfor %}
+
+{% endif %}
+	<form method="post" name="form" action="{% url 'home_upload' %}" enctype="multipart/form-data">
+		{% csrf_token %}
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Título</label>
+		    {{form.titulo}}
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Epígrafe</label>
+		    {{form.epigrafe}}
+		  </div>
+		  <div class="form-group">
+		    <label for="exampleInputEmail1">Archivo</label>
+		    {{form.file}}
+		  </div>
+		  <button type="submit" class="btn btn-primary" title="Enviar">Enviar</button>
+</form>
+</div>
+{% endblock %}
+
+
